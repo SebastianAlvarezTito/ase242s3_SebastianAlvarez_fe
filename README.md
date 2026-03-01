@@ -1,6 +1,3 @@
-Aquí tienes el README completo en un solo bloque de código, listo para copiar y pegar directamente en tu archivo `README.md`:
-
-```markdown
 # 🚀 Implementación de Endpoint GET con Spring Boot
 
 ¡Bienvenido! Este repositorio detalla el proceso paso a paso para la creación de un microservicio capaz de responder con un mensaje de "Hola Mundo", explorando desde la configuración inicial hasta la resolución de dependencias en el ecosistema de **Java**.
@@ -89,12 +86,6 @@ Finalmente, se comprobó el funcionamiento accediendo a la siguiente dirección 
 | **Java (JDK)** | `17` |
 | **Spring Boot** | `3.2.0` |
 | **Maven** | `3.x` |
-
----
-
-## ✉️ Contacto
-
-Si tienes alguna duda sobre este proceso o el código, puedes escribirme:
 
 <p>
 <a href="mailto:sebastian.alvarez@vallegrande.edu.pe">
