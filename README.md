@@ -1,4 +1,1 @@
-¿Qué es Angular?
-Angular es un framework de desarrollo para crear aplicaciones web modernas, robustas y de una sola página (SPA) utilizando TypeScript y HTML.
-¿Qué herramientas necesitan instalar?
-Para trabajar con él, necesitas instalar Node.js (que incluye el gestor de paquetes npm) y el Angular CLI mediante la terminal.
+🧐 ¿Qué es Angular?Angular es un framework de desarrollo diseñado para crear aplicaciones web modernas, robustas y de una sola página (SPA) utilizando TypeScript y HTML.🛠️ Requisitos e InstalaciónPara poner en marcha este proyecto, asegúrate de tener instaladas las siguientes herramientas:Node.js: Entorno de ejecución para JavaScript.npm: Gestor de paquetes (incluido con Node).Angular CLI: Herramienta de línea de comandos para gestionar el proyecto.[!TIP]Puedes instalar el CLI globalmente con el comando: npm install -g @angular/cli💻 Versiones del EntornoHerramientaVersiónAngular CLI19.2.11Node.js22.14.0Package Managernpm 10.9.2
