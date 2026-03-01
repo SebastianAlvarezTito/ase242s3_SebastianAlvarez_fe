@@ -1,36 +1,103 @@
-# 🚀 Preguntas Angular
+Aquí tienes el README completo en un solo bloque de código, listo para copiar y pegar directamente en tu archivo `README.md`:
 
-¡Bienvenido! Este repositorio contiene las preguntas sobre el ecosistema de **Angular**.
+```markdown
+# 🚀 Implementación de Endpoint GET con Spring Boot
+
+¡Bienvenido! Este repositorio detalla el proceso paso a paso para la creación de un microservicio capaz de responder con un mensaje de "Hola Mundo", explorando desde la configuración inicial hasta la resolución de dependencias en el ecosistema de **Java**.
+
 <p>
-  <img src="https://img.shields.io/badge/-Angular-DD0031?style=flat&logo=angular&logoColor=white" alt="Angular Badge">
-  <img src="https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white" alt="TypeScript Badge">
-  <img src="https://img.shields.io/badge/-HTML5-E34F26?style=flat&logo=html5&logoColor=white" alt="HTML5 Badge">
-  <img src="https://img.shields.io/badge/-Node.js-339933?style=flat&logo=node.js&logoColor=white" alt="Node.js Badge">
+  <img src="https://img.shields.io/badge/-Spring%20Boot-6DB33F?style=flat&logo=spring-boot&logoColor=white" alt="Spring Boot Badge">
+  <img src="https://img.shields.io/badge/-Java-ED8B00?style=flat&logo=openjdk&logoColor=white" alt="Java Badge">
+  <img src="https://img.shields.io/badge/-Maven-C71A36?style=flat&logo=apache-maven&logoColor=white" alt="Maven Badge">
+  <img src="https://img.shields.io/badge/-VSCode-007ACC?style=flat&logo=visual-studio-code&logoColor=white" alt="VS Code Badge">
 </p>
 
 ---
 
-## 🧐 ¿Qué es Angular?
-Angular es un framework de desarrollo diseñado para crear aplicaciones web modernas, robustas y de una sola página (SPA) utilizando **TypeScript** y **HTML**.
-
-## 🛠️ Requisitos e Instalación
-Para poner en marcha este proyecto, asegúrate de tener instaladas las siguientes herramientas en tu entorno:
-
-* **Node.js**: Entorno de ejecución para JavaScript.
-* **npm**: Gestor de paquetes (incluido con Node).
-* **Angular CLI**: Herramienta de línea de comandos para gestionar el proyecto.
-
-> [!TIP]
-> Puedes instalar el CLI globalmente con el comando:  
-> `npm install -g @angular/cli`
+## 🧐 ¿Qué es un Endpoint GET?
+En el desarrollo de APIs, un **Endpoint** es una URL específica que permite a un cliente comunicarse con el servidor. El método **GET** se utiliza exclusivamente para solicitar o recuperar información del servidor sin alterar su estado.
 
 ---
 
-## 💻 Versiones del Entorno
-He utilizado las versiones más recientes para asegurar un rendimiento óptimo:
+## 🛠️ Guía de Implementación Paso a Paso
+
+### 1. Configuración en Spring Initializr
+Se utilizó [start.spring.io](https://start.spring.io) para generar el esqueleto del proyecto. A continuación, el significado de las especificaciones utilizadas:
+
+* **Project (Maven):** Herramienta encargada de gestionar el ciclo de vida del proyecto y descargar automáticamente las librerías necesarias.
+* **Language (Java):** Lenguaje de programación base del backend.
+* **Spring Boot (3.4.x):** Versión estable del framework que simplifica la configuración del servidor.
+* **Group (`vallegrande.edu.pe`):** Identificador único basado en el dominio de la institución.
+* **Artifact (`demo`):** Nombre técnico del proyecto.
+* **Packaging (Jar):** Formato de empaquetado que genera un archivo ejecutable único.
+* **Dependencies (Spring Web):** Dependencia vital que incluye el servidor **Apache Tomcat** y las librerías necesarias para crear servicios RESTful.
+
+### 2. Corrección del Archivo `pom.xml`
+Durante la actividad, se detectó que el proyecto no reconocía las anotaciones web. La solución consistió en integrar manualmente la dependencia **Web** dentro del bloque `<dependencies>`:
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+```
+
+### 3. Desarrollo del Controlador
+
+Se creó la clase `HolaMundoController.java` para gestionar las peticiones entrantes. En este paso se aplicaron los siguientes conceptos:
+
+* **`@RestController`**: Indica que la clase manejará datos web y los devolverá directamente al cuerpo de la respuesta.
+* **`@GetMapping("/hola")`**: Establece la ruta URL relativa que activará el método.
+
+```java
+package vallegrande.edu.pe.demo;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HolaMundoController {
+
+    @GetMapping("/hola")
+    public String decirHola() {
+        return "¡Hola Mundo desde Spring Boot, Sebastian!";
+    }
+}
+```
+
+### 4. Compilación y Despliegue
+
+Para levantar el servidor local, se utilizó el siguiente comando en la terminal (CMD):
+
+```cmd
+mvnw spring-boot:run
+```
+
+Este proceso compila el código Java, descarga las dependencias del `pom.xml` y arranca el servidor en el puerto por defecto.
+
+### 5. Verificación del Resultado
+
+Finalmente, se comprobó el funcionamiento accediendo a la siguiente dirección en el navegador:
+👉 `http://localhost:8080/hola`
+
+---
+
+## 💻 Especificaciones del Entorno
 
 | Herramienta | Versión |
-| :--- | :--- |
-| **Angular CLI** | `21.2.0` |
-| **Node.js** | `22.19.0` |
-| **Package Manager** | `npm 11.3.0` |
+|-------------|---------|
+| **Java (JDK)** | `17` |
+| **Spring Boot** | `3.2.0` |
+| **Maven** | `3.x` |
+
+---
+
+## ✉️ Contacto
+
+Si tienes alguna duda sobre este proceso o el código, puedes escribirme:
+
+<p>
+<a href="mailto:sebastian.alvarez@vallegrande.edu.pe">
+<img src="https://img.shields.io/badge/-Correo-D14836?style=flat&logo=gmail&logoColor=white" alt="Correo Badge">
+</a>
+</p>
